@@ -6,8 +6,8 @@
 // 1.3 Create a variable `ProGrad-2` with the navigator's name.
 // 1.4 Print `"The navigator's name is YYYY"`.
 
-var prograd_1 = "Akhila";
-var prograd_2 = "Nikhila";
+var prograd_1 = "akhila";
+var prograd_2 = "nikhila";
 console.log("The driver's name is " + prograd_1);
 console.log("The navigator's name is " + prograd_2);
 
