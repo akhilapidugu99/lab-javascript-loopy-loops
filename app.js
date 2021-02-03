@@ -6,26 +6,99 @@
 // 1.3 Create a variable `ProGrad-2` with the navigator's name.
 // 1.4 Print `"The navigator's name is YYYY"`.
 
+var prograd_1 = "Akhila";
+var prograd_2 = "Nikhila";
+console.log("The driver's name is " + prograd_1);
+console.log("The navigator's name is " + prograd_2);
+
+
 // Progression 2: Control Statements - 1
 // 2.1. Depending on which name is longer, print:
 // - The driver has the longest name, it has XX characters. or
 // - It seems that the navigator has the longest name, it has XX characters. or
 // - Wow, you both have equally long names, XX characters!.
 
+if (prograd_1.length > prograd_2.length) {
+    console.log("The driver has the longest name, it has " + prograd_1.length + " characters");
+}
+else if (prograd_1.length < prograd_2.length) {
+    console.log("It seems that the navigator has the longest name, it has " + prograd_2.length + " characters");
+}
+else {
+    console.log("Wow, you both have equally long names," + prograd_2.length + " characters!");
+}
+
 // 2.2. Check if the string contains vowels or not.
 // - If it contains vowels, print the name, and also print the vowel letters along with the vowel index. or
 // - print no vowels
 // - for example. In String ProGrad - o and a are vowels. Print ProGrad o a 2 5. 
 
+vowel_check(prograd_1);
+vowel_check(prograd_2);
+function vowel_check(string_value) {
+    var c = 0;
+    var position = " ";
+    var value = " ";
+    for (var i = 0; i < string_value.length; i++) {
+        if (string_value.charAt(i) == "a" || string_value.charAt(i) == "e" || string_value.charAt(i) == "i" || string_value.charAt(i) == "o" || string_value.charAt(i) == "u" || string_value.charAt(i) == "A" || string_value.charAt(i) == "E" || string_value.charAt(i) == "I" || string_value.charAt(i) == "O" || string_value.charAt(i) == "U") {
+            c = c + 1;
+            position = position.concat(' ', i.toString());
+            value = value.concat(' ', string_value.charAt(i));
+        }
+    }
+    if (c >= 1) {
+        console.log(string_value + " " + value + " " + position);
+        console.log("\n");
+    }
+    else
+        console.log("no vowels\n");
+}
+
 // 2.3. Check if the string contains uppercase and lowercase characters Xx
 // - Print the number of upper case characters
 // - Print the number of lower case characters
 
+Whichcase(prograd_1);
+Whichcase(prograd_2);
+function Whichcase(string_value1) {
+    var u = 0;
+    var l = 0;
+    for (var i = 0; i < string_value1.length; i++) {
 
+        if (string_value1.charCodeAt(i) >= 97 || string_value1.charCodeAt(i) <= 122)
+            l = l + 1;
+        else {
+            u = u + 1;
+        }
+    }
+    console.log("the number of upper case characters " + u);
+    console.log("the number of lower case characters " + l);
+}
 // Progression 3: Control Statements - 2
 // 3.1 Print all the characters of the driver's name, separated by a space and in capitals i.e. "ProGrad"
 
+serialprint(prograd_1);
+function serialprint(string_value2) {
+    var word = "";
+    var word1 = "";
+    for (var i = 0; i < string_value2.length; i++) {
+        word = (string_value2[i].toUpperCase());
+        word1 = word1.concat(' ', word);
+    }
+    console.log(word1);
+}
+
 // 3.2 Print all the characters of the navigator's name, in reverse order. i.e. "darGorP"
+reversePrint(prograd_2);
+function reversePrint(string_value3) {
+    var word = "";
+    var rword = "";
+    for (var i = string_value3.length - 1; i >= 0; i--) {
+        word = string_value3[i];
+        reword = rword.concat(' ', word);
+    }
+    console.log(rword);
+}
 
 // 3.3 Merge both the characters such that driver is followed by Navigator like "ProGrad FACEPrep"
 // - Now bring the FACEPrep to the start and send ProGrad to the back like "FACEPrep ProGrad"
@@ -34,6 +107,18 @@
 // - The driver's name goes first.
 // - Yo, the navigator goes first definitely.
 // - What?! You both have the same name?
+
+lexicographic(prograd_1, prograd_2)
+function lexicographic(string3, string4) {
+    if (string3 < string4) {
+        console.log("Yo, the navigator goes first definitely");
+    }
+    else if (string3 > string4) {
+        console.log("The driver's name goes first.");
+    }
+    else
+        console.log("What?! You both have the same name?");
+}
 
 // Bonus Time!
 // Bonus 1:
